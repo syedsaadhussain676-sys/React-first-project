@@ -1,0 +1,29 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "- create a folder and create index.html,styl.css,main.js\r - link main.js,style.css to index.html\r - create a div with id=\"root\" for react\r - npm init \r - npm i react react-dom\r - npm i -D parcel\r - package.json > remove \"main\" change \"type\" to \"module\" add type=\"module\" attr to src tag\r - In main.js import React and ReactDOM\r - ReactDOM setup\r - create RootLayout in root.render()\r - serve using parcel\r - npx parcel index.html\r - add scripts",
+  "homepage": "https://github.com/syedsaadhussain676-sys/React-first-project#readme",
+  "bugs": {
+    "url": "https://github.com/syedsaadhussain676-sys/React-first-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedsaadhussain676-sys/React-first-project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx parcel index.html --no-cache",
+    "build": "npx parcel build index.html",
+    "start": "npx parcel index.html --no-cache"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
