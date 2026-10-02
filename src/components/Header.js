@@ -1,10 +1,12 @@
-export const Header = () => {
+import { logoURL } from "../utils/constants";
+
+const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
         <img
           className="header-logo"
-          src="https://ik.imagekit.io/acrrubsd0/Untitled%20design.png?updatedAt=1770381393453"
+          src={logoURL}
         />
       </div>
 
@@ -22,7 +24,7 @@ export const Header = () => {
       </div>
     </div>
   );
-}
+};
 
 
 

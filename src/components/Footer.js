@@ -1,4 +1,6 @@
-export const Footer = () => {
+import { logoURL } from "../utils/constants";
+
+const Footer = () => {
   return (
     <div
       className="footer"
@@ -8,11 +10,11 @@ export const Footer = () => {
         color: "white",
       }}
     >
-      <h4>syed saad hussain .</h4>
+      <img src={logoURL} />
+      <h4>© 2026 Syed Saad Hussain. All rights reserved.</h4>
     </div>
   );
 };
 
 
-
-export default Footer
+export default Footer;

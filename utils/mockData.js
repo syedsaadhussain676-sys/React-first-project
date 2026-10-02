@@ -1,12 +1,4 @@
-import { restaurantsArr } from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
-
-
-const Body = () => {
-
-const
- [restaurantsArr, setRestaurantArr]= useState([
+export const restaurantsArr = [
   {
     id: "40377",
     resName: "Lucky Restaurant",
@@ -239,37 +231,4 @@ const
       "RX_THUMBNAIL/IMAGES/VENDOR/2025/12/19/c27d82ae-10e4-42df-8f2b-fa4a78f1b4a0_341437.JPG",
     location: "Banjara Hills",
   },
-])
-
-  return (
-    <div>
-      <button
-        onClick={() => {
-          console.log("button clicked");
-
-          let filterArr = restaurantsArr.filter((elem) => {
-            if (elem.avgRating > 4.2) {
-              return true;
-            } else {
-              return false;
-            }
-          });
-
-          setRestaurantArr(filterArr); // 11
-
-          console.log("after filtering:: ", restaurantsArr); // 11
-        }}
-      >
-        Filter Top Rated Restaurants
-      </button>
-
-      <div className="res-container">
-        {restaurantsArr.map((elem) => {
-          return <RestaurantCard resDetails={elem} key={elem.id} />;
-        })}
-      </div>
-    </div>
-  );
-};
-
-export default Body;
+];

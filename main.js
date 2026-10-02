@@ -2,20 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import {Footer} from "./src/components/Footer";
+import Body from "./src/components/Body";
 
 
 
 const RestaurantCard = ({resDetails}) => {
-  // props = {
-                 //    resDetails: {
-                                                // resName: "Paradise",
-                                                // cuisine: ["Biryani", "Chinese", "Mughlai", "Tandoor"],
-                                                // avgRating: 4.2,
-                                                // delieveryTime: 38,
-                                                // costForTwo: 300,
-                                                // imgId: "ggbuknqzqc4qoqfnl2cr"
-                                // }
-  // }
+  props = {
+                    resDetails: {
+                                                resName: "Paradise",
+                                                cuisine: ["Biryani", "Chinese", "Mughlai", "Tandoor"],
+                                                avgRating: 4.2,
+                                                delieveryTime: 38,
+                                                costForTwo: 300,
+                                                imgId: "ggbuknqzqc4qoqfnl2cr"
+                                }
+  }
 
   const {resName, cuisine, avgRating, delieveryTime, costForTwo, imgId} = resDetails;
 
@@ -273,24 +274,6 @@ const restaurantsArr = [
   }
 ]
 
-const Body = () => {
-  return (
-    <div className="res-container">
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-      <RestaurantCard />
-    </div>
-  );
-};
 
 const Footer = () => {
   return (
@@ -302,7 +285,7 @@ const Footer = () => {
         color: "white",
       }}
     >
-      <h4>syed saad hussain .</h4>
+      <h4>syed saad hussain.</h4>
     </div>
   );
 };
