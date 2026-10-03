@@ -11,7 +11,7 @@ const Footer = () => {
       }}
     >
       <img src={logoURL} />
-      <h4>© 2026 Syed Saad Hussain. All rights reserved.</h4>
+      <h4> Syed Saad Hussain 2026. reserved.</h4>
     </div>
   );
 };
