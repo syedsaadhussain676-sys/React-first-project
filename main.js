@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import {Footer} from "./src/components/Footer";
 import Body from "./src/components/Body";
+import AppLayout from "./utils/AppLayout";
 
 
 
@@ -275,30 +276,6 @@ const restaurantsArr = [
 ]
 
 
-const Footer = () => {
-  return (
-    <div
-      className="footer"
-      style={{
-        fontSize: "2rem",
-
-        color: "white",
-      }}
-    >
-      <h4>syed saad hussain.</h4>
-    </div>
-  );
-};
-
-const RootLayout = () => {
-  return (
-    <div>
-      <Header />
-      <Body />
-      <Footer />
-    </div>
-  );
-};
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
-root.render(<RootLayout />);
+root.render(<AppLayout />);
