@@ -13,14 +13,14 @@ const RestaurantCard = ({ resDetails }) => {
 
   return (
     <div className="res-card">
-      <img className="res-logo" src={baseURL + imgId} alt="res-logo" />
-      <h3>{resName}</h3>
-      <h4>{cuisine}</h4>
-      <h4>⭐ {avgRating} Stars</h4>
+      <img className="res-logo" src={baseURL + resDetails.info.cloudinaryImageId} alt="res-logo" />
+      <h3>{resDetails.info.name}</h3>
+      <h4>{resDetails.info.cuisines.join(", ")}</h4>
+      <h4>⭐ {resDetails.info.avgRating} Stars</h4>
       <h4>
-        {delieveryTime} mins | ₹{costForTwo} for two
+        {resDetails.info.sla.deliveryTime} mins | ₹{resDetails.info.costForTwo} for two
       </h4>
-      <h4>{location}</h4>
+      <h4>{resDetails.info.locality}</h4>
     </div>
   );
 };
