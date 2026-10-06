@@ -2,6 +2,7 @@
 import { swiggyRestaurantsURL } from "../utils/constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   console.log("I am inside a component");
@@ -10,10 +11,15 @@ const Body = () => {
   async function fetchRestaurantArr() {
     const response = await fetch(swiggyRestaurantsURL);
     const data = await response.json();
+
     setRestaurantArr(
-      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
     );
-    console.log(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
   }
 
   useEffect(() => {
@@ -22,7 +28,11 @@ const Body = () => {
   }, []); // only runs first time when component mounts
 
   if (restaurantsArr == null) {
-    return <div>Waiting...</div>;
+    return (
+      <div>
+        <Shimmer />
+      </div>
+    );
   }
 
   return (
