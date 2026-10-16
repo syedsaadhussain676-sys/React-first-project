@@ -1,6 +1,8 @@
 import { logoURL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Footer = () => {
+  const isOnline = useOnlineStatus();
   return (
     <div
       className="footer"
@@ -10,11 +12,12 @@ const Footer = () => {
         color: "white",
       }}
     >
+      {isOnline ? <b>You are Online</b> : <b>You are Offline</b>}
       <img src={logoURL} />
-      <h4> Syed Saad Hussain 2026. reserved.</h4>
+
+      <h4>© 2026 Syed Saad Hussain. All rights reserved.</h4>
     </div>
   );
 };
-
 
 export default Footer;

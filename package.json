@@ -22,7 +22,8 @@
   "homepage": "https://github.com/syedsaadhussain676-sys/React-first-project#readme",
   "dependencies": {
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "react-router": "^8.4.0"
   },
   "devDependencies": {
     "parcel": "^2.16.4"
