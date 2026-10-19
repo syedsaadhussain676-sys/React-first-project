@@ -1,14 +1,16 @@
-\import { Link } from "react-router";
+import { Link } from "react-router";
 import { logoURL } from "../utils/constants";
 import useRestaurantMenu from "../utils/useRestaurantArr";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import HotelListContext from "../utils/HotelListContext";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   const userObj = useContext(UserContext);
+  const { hotelList, setHotelList, allItems } = useContext(HotelListContext);
 
   return (
     <div className="header">
@@ -17,7 +19,19 @@ const Header = () => {
       </div>
 
       <div className="search-bar">
-        <input placeholder="Search Restaurants..." />
+        <input placeholder="Search Restaurants..." onChange={(e)=>{
+
+           const filteredArr =  allItems.filter((restaurantObj)=>{
+              if(restaurantObj.info.name.toLowerCase().includes(e.target.value.toLowerCase())){
+                return true
+              } else {
+                return false
+              }
+            })
+
+            setHotelList(filteredArr)
+
+        }} />
       </div>
 
       <div className="nav-items">

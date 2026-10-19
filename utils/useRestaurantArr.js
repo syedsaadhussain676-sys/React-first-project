@@ -1,28 +1,39 @@
-import { useEffect, useState } from "react";
-import { swiggyRestaurantURL } from "../constants";
+import {useState, useEffect, useContext} from "react"
+import { swiggyRestaurantsURL } from "./constants";
+import HotelListContext from "./HotelListContext";
+
 
 const useRestaurantArr = () => {
-  const [restaurantsArr, setRestaurantsArr] = useState([null]);
+  const {hotelList, setHotelList, setAllItems} = useContext(HotelListContext)
 
-  async function fetchRestaurants() {
-    const response = await fetch(swiggyRestaurantURL);
+  async function fetchRestaurantArr() {
+    const response = await fetch(swiggyRestaurantsURL);
+
     const data = await response.json();
-    setRestaurantArr(
+
+    setHotelList(
       data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
+
+     setAllItems(
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
+
+
 
     console.log(
       data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
   }
+
   useEffect(() => {
     fetchRestaurantArr();
   }, []);
 
-  return restaurantsArr;
+  return hotelList;
 };
-
 
 export default useRestaurantArr;
